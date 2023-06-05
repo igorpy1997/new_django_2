@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}">
+</head>
+<body>
+<form class="form-inline" method= "POST" action="/writing_menu_db">
+    {% csrf_token %}
+    <label for = "name">Name</label>
+    <input name ="name" id="name" required />
+    <label for = "language">language</label>
+    <input name ="language" id="language" required />
+    <label for = "course">course</label>
+    <input name ="course" id="course"  />
+    <label for = "grade">grade</label>
+    <input name ="grade" id="grade"  />
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</body>
+</html>

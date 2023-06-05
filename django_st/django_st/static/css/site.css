@@ -1,0 +1,26 @@
+tr:nth-child(even) {
+    background-color: #e5e5e5;
+}
+
+.table_row:nth-child(even){
+    background-color: #f5f5f5;
+text-align: -webkit-left;
+}
+
+.btn{
+    background-color: antiquewhite;
+    font-size: x-large;
+    solid-color: azure;
+    padding: 15px 32px;
+    text-after-overflow: center;
+}
+
+.change_info{
+    background-color: burlywood;
+    max-font-size: x-large;
+
+}
+.del_info{
+    text-decoration-color: brown;
+    text-size-adjust: revert;
+}

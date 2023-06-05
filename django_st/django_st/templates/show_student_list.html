@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}">
+</head>
+<body>
+<table class="table">
+    <tbody>
+    <tr class="table_header">
+        <td>id</td>
+        <td>Name</td>
+        <td>Language</td>
+        <td>Course</td>
+        <td>Grade</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    {% for user in users %}
+    <tr class="table_row">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.language }}</td>
+        <td>{{ user.course }}</td>
+        <td>{{ user.grade }}</td>
+        <td>
+            <form class="form-inline" action="edit_user/{{ user.id }}">
+                <button type="submit" class="change_info">Edit</button>
+            </form>
+        </td>
+        <td>
+            <form class="form-inline" method = "POST" action="delete_item">
+                {% csrf_token %}
+                <input type = 'hidden' value = '{{user.id}}' name = 'user_id'>
+                <button type="submit" class="del_info">-</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<form class="form-inline" action="writing_menu_db">
+    <button type="submit" class="change_info">Add student</button>
+</form>
+</body>
+</html>
